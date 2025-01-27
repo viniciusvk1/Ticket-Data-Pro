@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
-    @Query("SELECT t FROM Ticket t WHERE t.status = 'Abertos'")
+    @Query("SELECT t FROM Ticket t WHERE t.statusTicket = 'Abertos'")
     List<Ticket> findOpenTickets();
 
     @Query("SELECT t FROM Ticket t WHERE t.nomeDesenvolvedor = :desenvolvedor")
@@ -18,10 +18,12 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
     @Query("SELECT t FROM Ticket t WHERE t.statusDocumento = 'Reprovado'")
     List<Ticket> findRejectedTickets();
 
-    @Query("SELECT t FROM Ticket t WHERE t.status = 'Em Progresso'")
+    @Query("SELECT t FROM Ticket t WHERE t.statusTicket = 'Em Progresso'")
     List<Ticket> findActiveTickets();
 
     @Query("SELECT t FROM Ticket t WHERE t.prioridade = :prioridade")
     List<Ticket> findTicketsByPriority(@Param("prioridade") String prioridade);
+
+    List<Ticket> findByStatusTicket(String statusTicket);
 
 }

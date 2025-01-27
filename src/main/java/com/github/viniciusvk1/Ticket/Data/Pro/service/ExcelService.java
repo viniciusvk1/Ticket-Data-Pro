@@ -5,7 +5,10 @@ import com.github.viniciusvk1.Ticket.Data.Pro.repository.TicketRepository;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,11 +18,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ExcelService {
 
     private final TicketRepository ticketRepository;
+    private TicketService ticketService;
+
 
     @Autowired
     public ExcelService(TicketRepository ticketRepository) {
@@ -128,4 +134,37 @@ public class ExcelService {
             return null;
         }
     }
+
+    @GetMapping("/tickets/abertos")
+    public ResponseEntity<?> getOpenTickets() {
+        List<Ticket> tickets = ticketService.findOpenTickets();
+        return ResponseEntity.ok(Map.of("status", "Abertos", "tickets", tickets));
+    }
+
+    @GetMapping("/tickets/desenvolvedor/{nome}")
+    public ResponseEntity<?> getTicketsByDeveloper(@PathVariable String nome) {
+        List<Ticket> tickets = ticketService.findTicketsByDeveloper(nome);
+        return ResponseEntity.ok(Map.of("desenvolvedor", nome, "tickets", tickets));
+    }
+
+    @GetMapping("/tickets/reprovados")
+    public ResponseEntity<?> getRejectedTickets() {
+        List<Ticket> tickets = ticketService.findRejectedTickets();
+        return ResponseEntity.ok(Map.of("status_documento", "Reprovado", "tickets", tickets));
+    }
+
+    @GetMapping("/tickets/ativos")
+    public ResponseEntity<?> getActiveTickets() {
+        List<Ticket> tickets = ticketService.findActiveTickets();
+        return ResponseEntity.ok(tickets);
+    }
+
+    @GetMapping("/tickets/prioridade/{prioridade}")
+    public ResponseEntity<?> getTicketsByPriority(@PathVariable String prioridade) {
+        List<Ticket> tickets = ticketService.findTicketsByPriority(prioridade);
+        return ResponseEntity.ok(tickets);
+    }
+
+
+
 }

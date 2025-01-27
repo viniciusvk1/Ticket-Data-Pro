@@ -9,31 +9,26 @@ import java.util.List;
 
 @Service
 public class TicketService {
-
-    private final TicketRepository ticketRepository;
-
     @Autowired
-    public TicketService(TicketRepository ticketRepository) {
-        this.ticketRepository = ticketRepository;
+    private TicketRepository ticketRepository;
+
+    public List<Ticket> findOpenTickets() {
+        return ticketRepository.findOpenTickets();
     }
 
-    public Ticket saveTicket(Ticket ticket) {
-        return ticketRepository.save(ticket);
+    public List<Ticket> findTicketsByDeveloper(String developer) {
+        return ticketRepository.findTicketsByDeveloper(developer);
     }
 
-    public List<Ticket> saveAllTickets(List<Ticket> tickets) {
-        return ticketRepository.saveAll(tickets);
+    public List<Ticket> findRejectedTickets() {
+        return ticketRepository.findRejectedTickets();
     }
 
-    public List<Ticket> getAllTickets() {
-        return ticketRepository.findAll();
+    public List<Ticket> findActiveTickets() {
+        return ticketRepository.findActiveTickets();
     }
 
-    public Ticket getTicketById(Long id) {
-        return ticketRepository.findById(id).orElse(null);
-    }
-
-    public void deleteTicket(Long id) {
-        ticketRepository.deleteById(id);
+    public List<Ticket> findTicketsByPriority(String priority) {
+        return ticketRepository.findTicketsByPriority(priority);
     }
 }

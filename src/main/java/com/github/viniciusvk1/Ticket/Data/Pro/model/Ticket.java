@@ -57,4 +57,275 @@ public class Ticket {
     private LocalDateTime dataTratada;
     private LocalDateTime dataConvertida;
 
+    public String getStatusTicket() {
+        return statusTicket;
+    }
+
+    public void setStatusTicket(String statusTicket) {
+        this.statusTicket = statusTicket;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescricaoTicket() {
+        return descricaoTicket;
+    }
+
+    public void setDescricaoTicket(String descricaoTicket) {
+        this.descricaoTicket = descricaoTicket;
+    }
+
+    public String getTipoAssociacao() {
+        return tipoAssociacao;
+    }
+
+    public void setTipoAssociacao(String tipoAssociacao) {
+        this.tipoAssociacao = tipoAssociacao;
+    }
+
+    public String getIdentificacaoAssociacao() {
+        return identificacaoAssociacao;
+    }
+
+    public void setIdentificacaoAssociacao(String identificacaoAssociacao) {
+        this.identificacaoAssociacao = identificacaoAssociacao;
+    }
+
+    public String getNomeSolicitante() {
+        return nomeSolicitante;
+    }
+
+    public void setNomeSolicitante(String nomeSolicitante) {
+        this.nomeSolicitante = nomeSolicitante;
+    }
+
+    public String getDescricaoAssociacao() {
+        return descricaoAssociacao;
+    }
+
+    public void setDescricaoAssociacao(String descricaoAssociacao) {
+        this.descricaoAssociacao = descricaoAssociacao;
+    }
+
+    public String getNomeAvaliadorTecnico() {
+        return nomeAvaliadorTecnico;
+    }
+
+    public void setNomeAvaliadorTecnico(String nomeAvaliadorTecnico) {
+        this.nomeAvaliadorTecnico = nomeAvaliadorTecnico;
+    }
+
+    public String getTipoDesenvolvedor() {
+        return tipoDesenvolvedor;
+    }
+
+    public void setTipoDesenvolvedor(String tipoDesenvolvedor) {
+        this.tipoDesenvolvedor = tipoDesenvolvedor;
+    }
+
+    public String getNomeDesenvolvedor() {
+        return nomeDesenvolvedor;
+    }
+
+    public void setNomeDesenvolvedor(String nomeDesenvolvedor) {
+        this.nomeDesenvolvedor = nomeDesenvolvedor;
+    }
+
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getMotivoSolicitacao() {
+        return motivoSolicitacao;
+    }
+
+    public void setMotivoSolicitacao(String motivoSolicitacao) {
+        this.motivoSolicitacao = motivoSolicitacao;
+    }
+
+    public String getEquipeTrabalho() {
+        return equipeTrabalho;
+    }
+
+    public void setEquipeTrabalho(String equipeTrabalho) {
+        this.equipeTrabalho = equipeTrabalho;
+    }
+
+    public String getModulo() {
+        return modulo;
+    }
+
+    public void setModulo(String modulo) {
+        this.modulo = modulo;
+    }
+
+    public String getEtapa() {
+        return etapa;
+    }
+
+    public void setEtapa(String etapa) {
+        this.etapa = etapa;
+    }
+
+    public LocalDateTime getDataCriacaoTicket() {
+        return dataCriacaoTicket;
+    }
+
+    public void setDataCriacaoTicket(LocalDateTime dataCriacaoTicket) {
+        this.dataCriacaoTicket = dataCriacaoTicket;
+    }
+
+    public LocalDateTime getDataEncerramentoTicket() {
+        return dataEncerramentoTicket;
+    }
+
+    public void setDataEncerramentoTicket(LocalDateTime dataEncerramentoTicket) {
+        this.dataEncerramentoTicket = dataEncerramentoTicket;
+    }
+
+    public String getStatusDocumento() {
+        return statusDocumento;
+    }
+
+    public void setStatusDocumento(String statusDocumento) {
+        this.statusDocumento = statusDocumento;
+    }
+
+    public LocalDateTime getDataConvertida() {
+        return dataConvertida;
+    }
+
+    public void setDataConvertida(LocalDateTime dataConvertida) {
+        this.dataConvertida = dataConvertida;
+    }
+
+    public LocalDateTime getDataTratada() {
+        return dataTratada;
+    }
+
+    public void setDataTratada(LocalDateTime dataTratada) {
+        this.dataTratada = dataTratada;
+    }
+
+    public LocalDateTime getDataAtual() {
+        return dataAtual;
+    }
+
+    public void setDataAtual(LocalDateTime dataAtual) {
+        this.dataAtual = dataAtual;
+    }
+
+    public String getChangeRequests() {
+        return changeRequests;
+    }
+
+    public void setChangeRequests(String changeRequests) {
+        this.changeRequests = changeRequests;
+    }
+
+    public String getStatusDesenvolvimento() {
+        return statusDesenvolvimento;
+    }
+
+    public void setStatusDesenvolvimento(String statusDesenvolvimento) {
+        this.statusDesenvolvimento = statusDesenvolvimento;
+    }
+
+    public Integer getEsforcoRealHs() {
+        return esforcoRealHs;
+    }
+
+    public void setEsforcoRealHs(Integer esforcoRealHs) {
+        this.esforcoRealHs = esforcoRealHs;
+    }
+
+    public LocalDateTime getTerminoRealDesenvolvedor() {
+        return terminoRealDesenvolvedor;
+    }
+
+    public void setTerminoRealDesenvolvedor(LocalDateTime terminoRealDesenvolvedor) {
+        this.terminoRealDesenvolvedor = terminoRealDesenvolvedor;
+    }
+
+    public Integer getEsforcoPrevistoMaisAdicionalHs() {
+        return esforcoPrevistoMaisAdicionalHs;
+    }
+
+    public void setEsforcoPrevistoMaisAdicionalHs(Integer esforcoPrevistoMaisAdicionalHs) {
+        this.esforcoPrevistoMaisAdicionalHs = esforcoPrevistoMaisAdicionalHs;
+    }
+
+    public Integer getTotalEsforcoAdicionalHs() {
+        return totalEsforcoAdicionalHs;
+    }
+
+    public void setTotalEsforcoAdicionalHs(Integer totalEsforcoAdicionalHs) {
+        this.totalEsforcoAdicionalHs = totalEsforcoAdicionalHs;
+    }
+
+    public LocalDate getPrazoEntregaDesenvolvedor() {
+        return prazoEntregaDesenvolvedor;
+    }
+
+    public void setPrazoEntregaDesenvolvedor(LocalDate prazoEntregaDesenvolvedor) {
+        this.prazoEntregaDesenvolvedor = prazoEntregaDesenvolvedor;
+    }
+
+    public Integer getTotalEsforcoPrevistoHs() {
+        return totalEsforcoPrevistoHs;
+    }
+
+    public void setTotalEsforcoPrevistoHs(Integer totalEsforcoPrevistoHs) {
+        this.totalEsforcoPrevistoHs = totalEsforcoPrevistoHs;
+    }
+
+    public String getComplexidade() {
+        return complexidade;
+    }
+
+    public void setComplexidade(String complexidade) {
+        this.complexidade = complexidade;
+    }
+
+    public String getVolumeTrabalho() {
+        return volumeTrabalho;
+    }
+
+    public void setVolumeTrabalho(String volumeTrabalho) {
+        this.volumeTrabalho = volumeTrabalho;
+    }
+
+    public String getDocumentoReprovado() {
+        return documentoReprovado;
+    }
+
+    public void setDocumentoReprovado(String documentoReprovado) {
+        this.documentoReprovado = documentoReprovado;
+    }
+
+    public String getMotivoReprovacao() {
+        return motivoReprovacao;
+    }
+
+    public void setMotivoReprovacao(String motivoReprovacao) {
+        this.motivoReprovacao = motivoReprovacao;
+    }
+
+    public String getTipoSolicitacao() {
+        return tipoSolicitacao;
+    }
+
+    public void setTipoSolicitacao(String tipoSolicitacao) {
+        this.tipoSolicitacao = tipoSolicitacao;
+    }
 }

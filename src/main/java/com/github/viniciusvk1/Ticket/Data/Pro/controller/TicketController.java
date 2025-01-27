@@ -17,7 +17,6 @@ public class TicketController {
         this.excelService = excelService;
     }
 
-    // Endpoint para importar os tickets
     @PostMapping("/import")
     public String importTickets(@RequestParam String filePath) {
         try {

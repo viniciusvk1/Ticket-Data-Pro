@@ -1,13 +1,11 @@
 package com.github.viniciusvk1.Ticket.Data.Pro.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -23,6 +21,8 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    private String ticket;
     private String statusTicket;
     private String descricaoTicket;
     private String tipoAssociacao;
@@ -45,7 +45,10 @@ public class Ticket {
     private String motivoReprovacao;
     private String complexidade;
     private String volumeTrabalho;
+
+    @NotNull
     private Integer totalEsforcoPrevistoHs;
+
     private LocalDate prazoEntregaDesenvolvedor;
     private Integer totalEsforcoAdicionalHs;
     private Integer esforcoPrevistoMaisAdicionalHs;
@@ -327,5 +330,13 @@ public class Ticket {
 
     public void setTipoSolicitacao(String tipoSolicitacao) {
         this.tipoSolicitacao = tipoSolicitacao;
+    }
+
+    public String getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
     }
 }

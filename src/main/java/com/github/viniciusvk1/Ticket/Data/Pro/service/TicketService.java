@@ -17,27 +17,22 @@ public class TicketService {
         this.ticketRepository = ticketRepository;
     }
 
-    // Salvar um único ticket
     public Ticket saveTicket(Ticket ticket) {
         return ticketRepository.save(ticket);
     }
 
-    // Salvar todos os tickets de uma vez
     public List<Ticket> saveAllTickets(List<Ticket> tickets) {
         return ticketRepository.saveAll(tickets);
     }
 
-    // Buscar todos os tickets
     public List<Ticket> getAllTickets() {
         return ticketRepository.findAll();
     }
 
-    // Buscar um ticket por ID
     public Ticket getTicketById(Long id) {
         return ticketRepository.findById(id).orElse(null);
     }
 
-    // Deletar um ticket
     public void deleteTicket(Long id) {
         ticketRepository.deleteById(id);
     }

@@ -26,72 +26,68 @@ public class ExcelService {
         this.ticketRepository = ticketRepository;
     }
 
-    // Método para ler e importar os dados de um arquivo Excel
     public void importTicketsFromExcel(String filePath) throws IOException {
         FileInputStream file = new FileInputStream(new File(filePath));
         Workbook workbook = new XSSFWorkbook(file);
-        Sheet sheet = workbook.getSheetAt(0);  // Supondo que os dados estão na primeira aba
+        Sheet sheet = workbook.getSheetAt(0);
         Iterator<Row> rowIterator = sheet.iterator();
 
         List<Ticket> tickets = new ArrayList<>();
 
-        // Ignorar a primeira linha (cabeçalhos)
         if (rowIterator.hasNext()) {
             rowIterator.next();
         }
 
-        // Iterar pelas linhas do arquivo Excel
         while (rowIterator.hasNext()) {
             Row row = rowIterator.next();
 
             Ticket ticket = new Ticket();
 
-            // Preencher os campos do Ticket a partir das células da linha
             ticket.setStatusTicket(getCellValue(row, 0));
-            ticket.setDescricaoTicket(getCellValue(row, 1));
-            ticket.setTipoAssociacao(getCellValue(row, 2));
-            ticket.setIdentificacaoAssociacao(getCellValue(row, 3));
-            ticket.setDescricaoAssociacao(getCellValue(row, 4));
-            ticket.setNomeSolicitante(getCellValue(row, 5));
-            ticket.setNomeAvaliadorTecnico(getCellValue(row, 6));
-            ticket.setTipoDesenvolvedor(getCellValue(row, 7));
-            ticket.setNomeDesenvolvedor(getCellValue(row, 8));
-            ticket.setPrioridade(getCellValue(row, 9));
-            ticket.setMotivoSolicitacao(getCellValue(row, 10));
-            ticket.setEquipeTrabalho(getCellValue(row, 11));
-            ticket.setModulo(getCellValue(row, 12));
-            ticket.setEtapa(getCellValue(row, 13));
-            ticket.setDataCriacaoTicket(parseLocalDateTime(getCellValue(row, 14)));
-            ticket.setDataEncerramentoTicket(parseLocalDateTime(getCellValue(row, 15)));
-            ticket.setStatusDocumento(getCellValue(row, 16));
-            ticket.setTipoSolicitacao(getCellValue(row, 17));
-            ticket.setDocumentoReprovado(getCellValue(row, 18));
-            ticket.setMotivoReprovacao(getCellValue(row, 19));
-            ticket.setComplexidade(getCellValue(row, 20));
-            ticket.setVolumeTrabalho(getCellValue(row, 21));
-            ticket.setTotalEsforcoPrevistoHs(parseInteger(getCellValue(row, 22)));
-            ticket.setPrazoEntregaDesenvolvedor(parseLocalDate(getCellValue(row, 23)));
-            ticket.setTotalEsforcoAdicionalHs(parseInteger(getCellValue(row, 24)));
-            ticket.setEsforcoPrevistoMaisAdicionalHs(parseInteger(getCellValue(row, 25)));
-            ticket.setEsforcoRealHs(parseInteger(getCellValue(row, 26)));
-            ticket.setTerminoRealDesenvolvedor(parseLocalDateTime(getCellValue(row, 27)));
-            ticket.setStatusDesenvolvimento(getCellValue(row, 28));
-            ticket.setChangeRequests(getCellValue(row, 29));
-            ticket.setDataAtual(parseLocalDateTime(getCellValue(row, 30)));
-            ticket.setDataTratada(parseLocalDateTime(getCellValue(row, 31)));
-            ticket.setDataConvertida(parseLocalDateTime(getCellValue(row, 32)));
+            ticket.setTicket(getCellValue(row, 1));
+            ticket.setDescricaoTicket(getCellValue(row, 2));
+            ticket.setTipoAssociacao(getCellValue(row, 3));
+            ticket.setIdentificacaoAssociacao(getCellValue(row, 4));
+            ticket.setDescricaoAssociacao(getCellValue(row, 5));
+            ticket.setNomeSolicitante(getCellValue(row, 6));
+            ticket.setNomeAvaliadorTecnico(getCellValue(row, 7));
+            ticket.setTipoDesenvolvedor(getCellValue(row, 8));
+            ticket.setNomeDesenvolvedor(getCellValue(row, 9));
+            ticket.setPrioridade(getCellValue(row, 10));
+            ticket.setMotivoSolicitacao(getCellValue(row, 11));
+            ticket.setEquipeTrabalho(getCellValue(row, 12));
+            ticket.setModulo(getCellValue(row, 13));
+            ticket.setEtapa(getCellValue(row, 14));
+            ticket.setDataCriacaoTicket(parseLocalDateTime(getCellValue(row, 15)));
+            ticket.setDataEncerramentoTicket(parseLocalDateTime(getCellValue(row, 16)));
+            ticket.setStatusDocumento(getCellValue(row, 17));
+            ticket.setTipoSolicitacao(getCellValue(row, 18));
+            ticket.setDocumentoReprovado(getCellValue(row, 19));
+            ticket.setMotivoReprovacao(getCellValue(row, 20));
+            ticket.setComplexidade(getCellValue(row, 21));
+            ticket.setVolumeTrabalho(getCellValue(row, 22));
+            ticket.setTotalEsforcoPrevistoHs(parseInteger(getCellValue(row, 23)));
+            ticket.setPrazoEntregaDesenvolvedor(parseLocalDate(getCellValue(row, 24)));
+            ticket.setTotalEsforcoAdicionalHs(parseInteger(getCellValue(row, 25)));
+            ticket.setEsforcoPrevistoMaisAdicionalHs(parseInteger(getCellValue(row, 26)));
+            ticket.setEsforcoRealHs(parseInteger(getCellValue(row, 27)));
+            ticket.setTerminoRealDesenvolvedor(parseLocalDateTime(getCellValue(row, 28)));
+            ticket.setStatusDesenvolvimento(getCellValue(row, 29));
+            ticket.setChangeRequests(getCellValue(row, 30));
+            ticket.setDataAtual(parseLocalDateTime(getCellValue(row, 31)));
+            ticket.setDataTratada(parseLocalDateTime(getCellValue(row, 32)));
+            ticket.setDataConvertida(parseLocalDateTime(getCellValue(row, 33)));
 
             tickets.add(ticket);
         }
 
-        // Salvar os tickets no banco
         ticketRepository.saveAll(tickets);
 
         workbook.close();
         file.close();
     }
 
-    // Método auxiliar para obter o valor de uma célula
+
     private String getCellValue(Row row, int columnIndex) {
         Cell cell = row.getCell(columnIndex);
         if (cell != null) {
@@ -109,7 +105,6 @@ public class ExcelService {
         return "";
     }
 
-    // Converter para LocalDate
     private LocalDate parseLocalDate(String value) {
         try {
             return LocalDate.parse(value);
@@ -118,7 +113,6 @@ public class ExcelService {
         }
     }
 
-    // Converter para LocalDateTime
     private LocalDateTime parseLocalDateTime(String value) {
         try {
             return LocalDateTime.parse(value);
@@ -127,7 +121,6 @@ public class ExcelService {
         }
     }
 
-    // Converter para Integer
     private Integer parseInteger(String value) {
         try {
             return Integer.parseInt(value);

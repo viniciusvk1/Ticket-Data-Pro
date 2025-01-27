@@ -1,7 +1,7 @@
-<h1>Java Excel Reader - Documentação</h1>
+<h1>Ticket Data Pro - Documentação</h1>
 <h2>Introdução</h2>
 
-Java Excel Reader é uma aplicação web projetada para importar, processar e analisar dados de arquivos Excel (.xlsx). Utilizando tecnologias robustas como Java, Spring, Hibernate, Lombok, Flyway, Apache POI, e PostgreSQL, a aplicação visa proporcionar uma leitura eficiente e organizada dos dados, com foco na melhoria da gestão de tickets de suporte e desenvolvimento.
+Ticket Data Pro é uma aplicação web projetada para importar, processar e analisar dados de arquivos Excel (.xlsx). Utilizando tecnologias robustas como Java, Spring, Hibernate, Lombok, Flyway, Apache POI, e PostgreSQL, a aplicação visa proporcionar uma leitura eficiente e organizada dos dados, com foco na melhoria da gestão de tickets de suporte e desenvolvimento.
 
 <h2>Tecnologias Utilizadas</h2>
 <ul>
@@ -17,7 +17,7 @@ Java Excel Reader é uma aplicação web projetada para importar, processar e an
 <h2>Funcionalidades</h2>
 
 <h3>Importação de Dados do Excel</h3>
-<p>A principal funcionalidade do <strong>Java Excel Reader</strong> é a capacidade de importar dados de arquivos Excel para o banco de dados <strong>PostgreSQL</strong>. A estrutura de dados que será processada está organizada de forma a refletir os seguintes campos:</p>
+<p>A principal funcionalidade do <strong>Ticket Data Pro</strong> é a capacidade de importar dados de arquivos Excel para o banco de dados <strong>PostgreSQL</strong>. A estrutura de dados que será processada está organizada de forma a refletir os seguintes campos:</p>
 <ul>
   <li><strong>Status do Ticket</strong></li>
   <li><strong>Ticket</strong></li>
@@ -314,7 +314,7 @@ mvn spring-boot:run
 </pre>
 
 <h2>Contribuindo</h2>
-<p>Se você quiser contribuir para o desenvolvimento do Java Excel Reader, sinta-se à vontade para enviar um pull request ou abrir uma issue.</p>
+<p>Se você quiser contribuir para o desenvolvimento do Ticket Data Pro, sinta-se à vontade para enviar um pull request ou abrir uma issue.</p>
 
 <h2>Licença</h2>
 

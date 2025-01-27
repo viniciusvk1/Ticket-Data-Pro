@@ -1,4 +1,4 @@
-package com.github.viniciusvk1.TicketDataPro;
+package com.github.viniciusvk1.Ticket.Data.Pro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.github.viniciusvk1.TicketDataPro;
+package com.github.viniciusvk1.Ticket.Data.Pro;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

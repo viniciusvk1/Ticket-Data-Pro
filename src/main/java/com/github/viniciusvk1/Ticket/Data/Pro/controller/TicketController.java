@@ -58,5 +58,20 @@ public class TicketController {
 
         // Caso contrário, retorna todos os tickets
         return ticketRepository.findAll();
+
     }
+
+    // Endpoint para buscar tickets por desenvolvedor
+    @GetMapping("/by-developer")
+    public List<Ticket> getTicketsByDeveloper(@RequestParam String nomeDesenvolvedor) {
+        List<Ticket> tickets = ticketRepository.findByNomeDesenvolvedor(nomeDesenvolvedor);
+
+        if (tickets.isEmpty()) {
+            // Retorna erro 404 caso não encontre tickets para o desenvolvedor
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No tickets found for developer: " + nomeDesenvolvedor);
+        }
+
+        return tickets;
+    }
+
 }

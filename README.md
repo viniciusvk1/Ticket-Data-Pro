@@ -288,12 +288,7 @@ Ticket Data Pro é uma aplicação web projetada para importar, processar e anal
 <h2>Como Executar</h2>
 <p>Clone o repositório:</p>
 <pre>
-git clone https://github.com/usuario/java-excel-reader.git
-</pre>
-
-<p>Navegue até a pasta do projeto:</p>
-<pre>
-cd java-excel-reader
+git clone https://github.com/viniciusvk1/Ticket-Data-Pro.git
 </pre>
 
 <p>Importe as dependências do Maven:</p>
